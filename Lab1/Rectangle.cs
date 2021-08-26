@@ -10,7 +10,7 @@ namespace Lab1
 {
     public class Rectangle : Shape
     {
-        public override void DrawShape(Panel p, Color c)
+        public override void drawColoredShape(Panel p, Color c)
         {
             Pen pen = new Pen(c);
             Graphics g = p.CreateGraphics();

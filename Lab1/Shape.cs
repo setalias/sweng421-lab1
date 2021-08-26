@@ -18,7 +18,7 @@ namespace Lab1
 		public int h { get; set; }
 		public Color color { get; set; }
 
-		public virtual void DrawShape(Panel p, Color c) { }
+		public virtual void drawColoredShape(Panel p, Color c) { }
 		//public void bufferShape(Graphics fgg) { } 
 	}
 }

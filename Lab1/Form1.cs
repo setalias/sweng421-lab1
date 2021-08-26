@@ -68,7 +68,7 @@ namespace Lab1
 			c = Color.FromArgb(red,green,blue);
 			s.newx = e.X;
 			s.newy = e.Y;
-			s.DrawShape(panel1,c);
+			s.drawColoredShape(panel1,c);
 		}
 
 		private void panel1_MouseMove(object sender, MouseEventArgs e)
