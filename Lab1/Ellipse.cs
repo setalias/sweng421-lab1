@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab1
 {
-	public class Oval : Shape
+	class Ellipse
 	{
 	}
 }
