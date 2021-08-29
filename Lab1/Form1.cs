@@ -60,8 +60,6 @@ namespace Lab1
 			fgg = Graphics.FromImage(fg);
 			fgg.DrawImage(bg1, 0, 0);
 			bgg.DrawImage(fg1, 0, 0);
-			redraw = true;
-
 		}
 
         private void trackBar3_ValueChanged(object sender, EventArgs e)
