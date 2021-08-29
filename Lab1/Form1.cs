@@ -17,7 +17,6 @@ namespace Lab1
 		Bitmap bg, fg;
 		Graphics bgg, fgg;
 		bool down = false;
-		bool resize = false;
 
 		private void button1_Click(object sender, EventArgs e)
 		{
@@ -46,13 +45,18 @@ namespace Lab1
 
         private void panel1_Resize(object sender, EventArgs e)
         {
+			// save current panel drawings
 			Bitmap bg1 = bg;
 			Bitmap fg1 = fg;
+
+			// create new panel
 			bg = new Bitmap(panel1.Width, panel1.Height);
 			fg = new Bitmap(panel1.Width, panel1.Height);
 			bgg = Graphics.FromImage(bg);
 			bgg.FillRectangle(Brushes.White, 0, 0, panel1.Width, panel1.Height);
 			fgg = Graphics.FromImage(fg);
+
+			// redraw shapes
 			fgg.DrawImage(bg1, 0, 0);
 			bgg.DrawImage(fg1, 0, 0);
 		}
@@ -81,16 +85,6 @@ namespace Lab1
 				bgg.FillRectangle(Brushes.White, 0, 0, panel1.Width, panel1.Height);
 				fgg = Graphics.FromImage(fg);
             }
-		}
-
-		private void Window_Resized(object sender, EventArgs e)
-        {
-			bg = new Bitmap(panel1.Width, panel1.Height);
-			fg = new Bitmap(panel1.Width, panel1.Height);
-			bgg = Graphics.FromImage(bg);
-			bgg.FillRectangle(Brushes.White, 0, 0, panel1.Width, panel1.Height);
-			fgg = Graphics.FromImage(fg);
-			
 		}
 
 		private void panel1_MouseUp(object sender, MouseEventArgs e)
