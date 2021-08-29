@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Drawing;
+
 
 namespace Lab1
 {
 	public class Line : Shape
 	{
-		public override void drawColoredShape(Panel p, Color c)
+		public override void drawColoredShape(Graphics fgg, Color c)
         {
 			Pen pen = new Pen(c);
-			Graphics g = p.CreateGraphics();
-			g.DrawLine(pen,oldx,oldy,newx,newy);
+
+			// draw line
+			fgg.DrawLine(pen, start_x, start_y, end_x, end_y);
 		}
 
 	}
