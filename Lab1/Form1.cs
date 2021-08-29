@@ -43,7 +43,20 @@ namespace Lab1
 			green = trackBar2.Value; // green tracker 
 		}
 
-		private void trackBar3_ValueChanged(object sender, EventArgs e)
+        private void panel1_Resize(object sender, EventArgs e)
+        {
+			Bitmap bg1 = bg;
+			Bitmap fg1 = fg;
+			bg = new Bitmap(panel1.Width, panel1.Height);
+			fg = new Bitmap(panel1.Width, panel1.Height);
+			bgg = Graphics.FromImage(bg);
+			bgg.FillRectangle(Brushes.White, 0, 0, panel1.Width, panel1.Height);
+			fgg = Graphics.FromImage(fg);
+			fgg.DrawImage(bg1, 0, 0);
+			bgg.DrawImage(fg1, 0, 0);
+		}
+
+        private void trackBar3_ValueChanged(object sender, EventArgs e)
 		{
 			blue = trackBar3.Value; // blue tracker 
 		}
