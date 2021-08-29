@@ -106,20 +106,22 @@ namespace Lab1
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Location = new System.Drawing.Point(13, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(775, 360);
+            this.panel1.Size = new System.Drawing.Size(776, 379);
             this.panel1.TabIndex = 6;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            this.panel1.Resize += new System.EventHandler(this.Window_Resized);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(801, 456);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.trackBar3);
             this.Controls.Add(this.trackBar2);
