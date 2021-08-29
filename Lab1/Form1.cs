@@ -17,7 +17,8 @@ namespace Lab1
 		Bitmap bg, fg;
 		Graphics bgg, fgg;
 		bool down = false;
-		
+		bool resize = false;
+
 		private void button1_Click(object sender, EventArgs e)
 		{
 			s = new Line(); // line button
@@ -61,8 +62,9 @@ namespace Lab1
 			blue = trackBar3.Value; // blue tracker 
 		}
 
-		private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
 		{
+
 			// get starting values of shape 
 			s.start_x = e.X;
 			s.start_y = e.Y;
@@ -79,6 +81,16 @@ namespace Lab1
 				bgg.FillRectangle(Brushes.White, 0, 0, panel1.Width, panel1.Height);
 				fgg = Graphics.FromImage(fg);
             }
+		}
+
+		private void Window_Resized(object sender, EventArgs e)
+        {
+			bg = new Bitmap(panel1.Width, panel1.Height);
+			fg = new Bitmap(panel1.Width, panel1.Height);
+			bgg = Graphics.FromImage(bg);
+			bgg.FillRectangle(Brushes.White, 0, 0, panel1.Width, panel1.Height);
+			fgg = Graphics.FromImage(fg);
+			
 		}
 
 		private void panel1_MouseUp(object sender, MouseEventArgs e)
@@ -107,6 +119,7 @@ namespace Lab1
 
 				// draw to panel 
 				Graphics g = panel1.CreateGraphics();
+				
 				g.DrawImage(fg, 0, 0);
 
             }
